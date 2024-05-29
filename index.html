@@ -7,6 +7,77 @@
     <title>Todo List | JS</title>
 </head>
 <body>
+    <header class="header">
+        <nav class="navbar">
+            <div id="profile-container">
+                <img src="./assets/img/avatar.png" alt="profile picture">
+                <div id="profile-text-container">
+                    <p id="profile-name">Johnatan Fallen</p>
+                    <p id="profile-position">Web Developer</p>
+                </div>
+            </div>
+        </nav>
+        <section class="header-buttons">
+            <div id="tabs-container">
+                <button class="tab">Today</button>
+                <button class="tab">Done</button>
+                <button class="tab">Overdue</button>
+            </div>
+            <button class="btn btn-delete-all">Delete all tasks</button>
+        </section>
+    </header>
+    <main>
+        <section class="create-todo">
+            <textarea name="todo" id="create-todo-field"></textarea>
+            <select name="priority" id="">
+                <option value="high">high priority</option>
+                <option value="medium">medium priority</option>
+                <option value="low">low priority</option>
+            </select>
+            <button id="create-todo-button">+</button>
+        </section>
+        <section class="list-of-todos">
+            <section id="todo-overdue">
+                <p>Overdue</p>
+                <ul id="todo-overdue-container">
+                    <li id="todo-1">
+                        <div>
+                            <p>Task</p>
+                            <p>Wednesday, May 29, 2024</p>
+                            <p class="priority-label">medium priority</p>
+                        </div>
+                        <button class="btn btn-delete-todo">Delete</button>
+                    </li>
+                </ul>
+            </section>
+            <section id="todo-today">
+                <p>Today</p>
+                <ul id="todo-today-container">
+                    <li id="todo-1">
+                        <div>
+                            <p>Task</p>
+                            <p>Wednesday, May 29, 2024</p>
+                            <p class="priority-label">medium priority</p>
+                        </div>
+                        <button class="btn btn-delete-todo">Delete</button>
+                    </li>
+                </ul>
+            </section>
+            <section id="todo-done">
+                <p>Done</p>
+                <ul id="todo-done-container">
+                    <li id="todo-1">
+                        <div>
+                            <p>Task</p>
+                            <p>Wednesday, May 29, 2024</p>
+                            <p class="priority-label">medium priority</p>
+                        </div>
+                        <button class="btn btn-delete-todo">Delete</button>
+                    </li>
+                </ul>
+            </section>
+        </section>
+    </main>
     <script src="./assets/js/main.js"></script>
 </body>
 </html>
