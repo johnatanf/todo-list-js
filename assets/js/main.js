@@ -1,11 +1,24 @@
 const localStorageName = 'todoApp';
-const deleteAllTodosButton = document.getElementById('delete-all-todos-button')
+const deleteAllTodosButton = document.getElementById('delete-all-todos-button');
+const createTodoButton = document.getElementById('create-todo-button');
 
-deleteAllTodosButton.addEventListener('click', deleteAllTodoItemsFromStorage)
+deleteAllTodosButton.addEventListener('click', clickDeleteAllTodosButton)
+createTodoButton.addEventListener('click', clickAddTodoButton)
 
 refreshTodoContainerComponents();
 
 // functions
+
+function clickDeleteAllTodosButton() {
+    deleteAllTodoItemsFromStorage()
+}
+
+function clickAddTodoButton() {
+    const createTodoField = document.getElementById('create-todo-field');
+    const createTodoPriority = document.getElementById('create-todo-priority');
+
+    addTodoItemToStorage(createTodoField.value, parseInt(createTodoPriority.value))
+}
 
 function createUniqueID () {
     return (new Date).toISOString().replace(/\D/g, "") + (1000 + Math.floor(Math.random() * 10000)).toString().slice(0, 4)
