@@ -1,4 +1,6 @@
 const localStorageName = 'todoApp';
+const defaultTaskField = "";
+const defaultPriority = "3";
 const deleteAllTodosButton = document.getElementById('delete-all-todos-button');
 const createTodoButton = document.getElementById('create-todo-button');
 
@@ -26,6 +28,8 @@ function clickAddTodoButton() {
     const createTodoPriority = document.getElementById('create-todo-priority');
 
     addTodoItemToStorage(createTodoField.value, parseInt(createTodoPriority.value))
+    createTodoField.value = defaultTaskField;
+    createTodoPriority.value = defaultPriority;
 }
 
 function createUniqueID () {
