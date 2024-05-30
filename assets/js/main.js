@@ -9,6 +9,14 @@ refreshTodoContainerComponents();
 
 // functions
 
+function createIfLocalStorageDoesNotExist() {
+    if (localStorage.getItem(localStorageName) === null) {
+        saveToLocalStorage([]);
+    }
+
+    return true;
+}
+
 function clickDeleteAllTodosButton() {
     deleteAllTodoItemsFromStorage()
 }
@@ -39,6 +47,7 @@ function saveToLocalStorage(data) {
 }
 
 function retrieveFromLocalStorage() {
+    createIfLocalStorageDoesNotExist();
     const retrievedData = JSON.parse(localStorage.getItem(localStorageName));
     return retrievedData;
 }
