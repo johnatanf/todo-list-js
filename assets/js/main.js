@@ -100,7 +100,7 @@ function refreshTodoContainerComponents () {
     let overdueData = [];
     let todayData = [];
     let doneData = [];
-    const localData = getDataFromLocalStorage();
+    const localData = retrieveDataFromLocalStorage();
     
     const overdueSection = document.getElementById('todo-overdue-container');
     const todaySection = document.getElementById('todo-today-container');
