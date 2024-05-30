@@ -1,6 +1,11 @@
 const localStorageName = 'todoApp';
+const deleteAllTodosButton = document.getElementById('delete-all-todos-button')
+
+deleteAllTodosButton.addEventListener('click', deleteAllTodoItemsFromStorage)
 
 refreshTodoContainerComponents();
+
+// functions
 
 function createUniqueID () {
     return (new Date).toISOString().replace(/\D/g, "") + (1000 + Math.floor(Math.random() * 10000)).toString().slice(0, 4)
@@ -186,6 +191,3 @@ function deleteAllTodoItemsFromStorage() {
     refreshTodoContainerComponents();
 
 }
-
-// event listeners
-
