@@ -1,5 +1,7 @@
 const localStorageName = 'todoApp';
 
+refreshTodoContainerComponents();
+
 function createUniqueID () {
     return (new Date).toISOString().replace(/\D/g, "") + (1000 + Math.floor(Math.random() * 10000)).toString().slice(0, 4)
 }
@@ -184,3 +186,6 @@ function deleteAllTodoItemsFromStorage() {
     refreshTodoContainerComponents();
 
 }
+
+// event listeners
+
