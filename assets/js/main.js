@@ -1,4 +1,14 @@
-const data = '[{"id":"1","task":"Task 1","priority":1,"deadline":"2024-05-29","done":false},{"id":"2","task":"Task 2","priority":2,"deadline":"2024-05-29","done":true},{"id":"3","task":"Task 3","priority":3,"deadline":"2024-05-31","done":false},{"id":"4","task":"Task 4","priority":3,"deadline":"2024-05-30","done":false},{"id":"5","task":"Task 5","priority":3,"deadline":"2024-05-30","done":true}]';
+const localStorageName = 'todoApp';
+
+function saveToLocalStorage(data) {
+    localStorage.setItem(localStorageName, JSON.stringify(data));
+    return true;
+}
+
+function retrieveFromLocalStorage() {
+    const retrievedData = JSON.parse(localStorage.getItem(localStorageName));
+    return retrievedData;
+}
 
 function formatDate(strDate) {
 
@@ -114,4 +124,3 @@ function refreshTodoContainerComponents () {
     refreshTodoSection(doneSection, doneData);
 }
 
-refreshTodoContainerComponents();
