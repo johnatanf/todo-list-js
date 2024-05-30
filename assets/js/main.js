@@ -89,17 +89,29 @@ function createTodoHTML (item) {
 
     const todoHTML = `
         <li id="todo-${item['id']}">
-            <input name="done" type="checkbox">
+            <input name="done" type="checkbox" id="checkbox-${item['id']}" class="todo-checkbox">
             <div>    
                 <p class="todo-label-task">${item['task']}</p>
                 <p class="todo-label-date">${formatDate(item['deadline'])}</p>
                 ${priorityElements[item[['priority']]]}
             </div>
-            <button class="btn btn-delete-todo">Delete</button>
+            <button id="delete-${item['id']}" class="btn btn-delete-todo">Delete</button>
         </li>
     `
 
     return todoHTML
+}
+
+function addEventListeners() {
+    const deleteButtons = document.getElementsByClassName('btn-delete-todo');
+    const checkboxes = document.getElementsByClassName('todo-checkbox');
+
+    [...deleteButtons].forEach((item, index) => {
+        let id = item.id.replace('delete-', '')
+        item.addEventListener('click', function() { deleteTodoItemFromStorage(id) })
+    })
+
+    return true;
 }
 
 function refreshTodoSection (htmlSectionElement, data) {
@@ -121,6 +133,7 @@ function refreshTodoSection (htmlSectionElement, data) {
     }
 
     htmlSectionElement.innerHTML = appendHTML;
+    addEventListeners();
 
     return true;
 }
