@@ -1,5 +1,18 @@
 const localStorageName = 'todoApp';
 
+function createUniqueID () {
+    return (new Date).toISOString().replace(/\D/g, "") + (1000 + Math.floor(Math.random() * 10000)).toString().slice(0, 4)
+}
+
+function getTodayDate() {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+
+    return `${year}-${month}-${day}`
+}
+
 function saveToLocalStorage(data) {
     localStorage.setItem(localStorageName, JSON.stringify(data));
     return true;
@@ -102,7 +115,7 @@ function refreshTodoContainerComponents () {
     const doneSection = document.getElementById('todo-done-container');
     
     localData.forEach((item, index) => {
-        const todayDate = (new Date()).toISOString().slice(0, 10);
+        const todayDate = (new Date(getTodayDate())).toISOString().slice(0, 10);
         const itemDateDeadline = new Date(item['deadline']).toISOString().slice(0, 10);
 
         if (item['done'] === true) {
@@ -119,3 +132,20 @@ function refreshTodoContainerComponents () {
     refreshTodoSection(doneSection, doneData);
 }
 
+function addTodoItemToStorage(task, priority) {
+    let data = retrieveFromLocalStorage();
+    const newData = {
+        ID: createUniqueID(),
+        created: (new Date()).toISOString(),
+        task: task,
+        priority: priority,
+        deadline: getTodayDate(),
+        done: false
+    }
+
+    data = data.concat(newData)
+
+    saveToLocalStorage(data)
+
+    return newData;
+}
