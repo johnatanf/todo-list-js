@@ -88,7 +88,7 @@ function createTodoHTML (item) {
     }
 
     const todoHTML = `
-        <li id="todo-${100}">
+        <li id="todo-${item['id']}">
             <input name="done" type="checkbox">
             <div>    
                 <p class="todo-label-task">${item['task']}</p>
