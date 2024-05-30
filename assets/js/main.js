@@ -69,7 +69,8 @@ function createTodoHTML (item) {
 
     const todoHTML = `
         <li id="todo-${100}">
-            <div>
+            <input name="done" type="checkbox">
+            <div>    
                 <p class="todo-label-task">${item['task']}</p>
                 <p class="todo-label-date">${formatDate(item['deadline'])}</p>
                 ${priorityElements[item[['priority']]]}
