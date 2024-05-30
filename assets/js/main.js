@@ -42,11 +42,6 @@ function formatDate(strDate) {
     return `${daysArray[date.getDay()]}, ${monthsArray[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 }
 
-function getDataFromLocalStorage () {
-    const retrievedData = JSON.parse(data); // remove data sample and replace with local storage
-    return retrievedData;
-}
-
 function clearTodoSection (htmlSectionElement) {
     htmlSectionElement.innerHTML = "";
 }
