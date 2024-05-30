@@ -136,7 +136,7 @@ function refreshTodoContainerComponents () {
 function addTodoItemToStorage(task, priority) {
     let data = retrieveFromLocalStorage();
     const newData = {
-        ID: createUniqueID(),
+        id: createUniqueID(),
         created: (new Date()).toISOString(),
         task: task,
         priority: priority,
@@ -147,6 +147,21 @@ function addTodoItemToStorage(task, priority) {
     data = data.concat(newData)
 
     saveToLocalStorage(data)
+    refreshTodoContainerComponents();
 
     return newData;
+}
+
+function editDoneStatusTodoItem(id, done) {
+    let data = retrieveFromLocalStorage();
+
+    data = data.map(item => {
+        if(item.id !== id) return item;
+        return { ...item, done }
+    })
+
+    saveToLocalStorage(data)
+    refreshTodoContainerComponents();
+
+    return id;
 }
