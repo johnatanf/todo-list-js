@@ -152,7 +152,7 @@ function addTodoItemToStorage(task, priority) {
     return newData;
 }
 
-function editDoneStatusTodoItem(id, done) {
+function editDoneStatusTodoItemInStorage(id, done) {
     let data = retrieveFromLocalStorage();
 
     data = data.map(item => {
@@ -164,4 +164,23 @@ function editDoneStatusTodoItem(id, done) {
     refreshTodoContainerComponents();
 
     return id;
+}
+
+function deleteTodoItemFromStorage(id) {
+    let data = retrieveFromLocalStorage();
+
+    data = data.filter(item => item.id !== id)
+
+    saveToLocalStorage(data)
+    refreshTodoContainerComponents();
+
+    return id;
+}
+
+function deleteAllTodoItemsFromStorage() {
+    let data = [];
+    
+    saveToLocalStorage(data)
+    refreshTodoContainerComponents();
+
 }
