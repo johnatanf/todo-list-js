@@ -89,7 +89,7 @@ function createTodoHTML (item) {
 
     const todoHTML = `
         <li id="todo-${item['id']}">
-            <input name="done" type="checkbox" id="checkbox-${item['id']}" class="todo-checkbox">
+            <input name="done" type="checkbox" id="checkbox-${item['id']}" class="todo-checkbox" ${item['done']? "checked" : ""}>
             <div>    
                 <p class="todo-label-task">${item['task']}</p>
                 <p class="todo-label-date">${formatDate(item['deadline'])}</p>
@@ -103,12 +103,17 @@ function createTodoHTML (item) {
 }
 
 function addEventListeners() {
-    const deleteButtons = document.getElementsByClassName('btn-delete-todo');
-    const checkboxes = document.getElementsByClassName('todo-checkbox');
+    const deleteButtons = [...document.getElementsByClassName('btn-delete-todo')];
+    const checkboxes = [...document.getElementsByClassName('todo-checkbox')];
 
-    [...deleteButtons].forEach((item, index) => {
+    deleteButtons.forEach((item, index) => {
         let id = item.id.replace('delete-', '')
         item.addEventListener('click', function() { deleteTodoItemFromStorage(id) })
+    })
+
+    checkboxes.forEach((item, index) => {
+        let id = item.id.replace('checkbox-', '')
+        item.addEventListener('click', function() { editDoneStatusTodoItemInStorage(id, item.checked ? true : false) })
     })
 
     return true;
