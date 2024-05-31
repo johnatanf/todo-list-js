@@ -54,7 +54,8 @@ function saveToLocalStorage(data) {
 
 function retrieveFromLocalStorage() {
     createIfLocalStorageDoesNotExist();
-    const retrievedData = JSON.parse(localStorage.getItem(localStorageName));
+    let retrievedData = JSON.parse(localStorage.getItem(localStorageName));
+    retrievedData = retrievedData.sort((a, b) => new Date(a.deadline) - new Date(b.deadline) || a.priority - b.priority || a.task.localeCompare(b.task));
     return retrievedData;
 }
 
