@@ -11,47 +11,49 @@
     <title>Todo List | JS</title>
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <div class="profile-container">
-                <img src="./assets/img/avatar.png" alt="profile picture">
-                <div class="profile-text-container">
-                    <p id="profile-name">Johnatan Fallen</p>
-                    <p id="profile-position">Web Developer</p>
+    <div class="header-main-container">
+        <header class="header">
+            <nav class="navbar">
+                <div class="profile-container">
+                    <img src="./assets/img/avatar.png" alt="profile picture">
+                    <div class="profile-text-container">
+                        <p id="profile-name">Johnatan Fallen</p>
+                        <p id="profile-position">Web Developer</p>
+                    </div>
                 </div>
-            </div>
-            <p id="navbar-time"></p>
-        </nav>
-    </header>
-    <main>
-        <section class="section create-todo">
-            <div class="create-todo-field-container">  
-                <textarea id="create-todo-field" name="todo"></textarea>
-                <select id="create-todo-priority" name="priority">
-                    <option class="create-todo-option priority--high" value="1">high priority</option>
-                    <option class="create-todo-option priority--medium" value="2">medium priority</option>
-                    <option class="create-todo-option priority--low" value="3" selected>low priority</option>
-                </select>
-            </div>
-            <div class="create-todo-button-container">
-                <button class="btn" id="create-todo-button">+</button>
-            </div>
-        </section>
-        <section class="section list-of-todos">
-            <section class="section" id="todo-overdue">
-                <p>Overdue</p>
-                <ul id="todo-overdue-container"></ul>
+                <p id="navbar-time"></p>
+            </nav>
+        </header>
+        <main>
+            <section class="section create-todo">
+                <div class="create-todo-field-container">  
+                    <textarea id="create-todo-field" name="todo"></textarea>
+                    <select id="create-todo-priority" name="priority">
+                        <option class="create-todo-option priority--high" value="1">high priority</option>
+                        <option class="create-todo-option priority--medium" value="2">medium priority</option>
+                        <option class="create-todo-option priority--low" value="3" selected>low priority</option>
+                    </select>
+                </div>
+                <div class="create-todo-button-container">
+                    <button class="btn" id="create-todo-button">+</button>
+                </div>
             </section>
-            <section class="section" id="todo-today">
-                <p>Today</p>
-                <ul id="todo-today-container"></ul>
+            <section class="section list-of-todos">
+                <section class="section" id="todo-overdue">
+                    <p>Overdue</p>
+                    <ul id="todo-overdue-container"></ul>
+                </section>
+                <section class="section" id="todo-today">
+                    <p>Today</p>
+                    <ul id="todo-today-container"></ul>
+                </section>
+                <section class="section" id="todo-done">
+                    <p>Done</p>
+                    <ul id="todo-done-container"></ul>
+                </section>
             </section>
-            <section class="section" id="todo-done">
-                <p>Done</p>
-                <ul id="todo-done-container"></ul>
-            </section>
-        </section>
-    </main>
+        </main>
+    </div>
     <footer class="footer">
         <button id="delete-all-todos-button" class="btn btn-delete-all">Delete all tasks</button>
     </footer>
