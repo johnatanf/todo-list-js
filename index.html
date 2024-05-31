@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
     <title>Todo List | JS</title>
@@ -10,14 +13,14 @@
 <body>
     <header class="header">
         <nav class="navbar">
-            <p id="navbar-time"></p>
-            <div id="profile-container">
+            <div class="profile-container">
                 <img src="./assets/img/avatar.png" alt="profile picture">
-                <div id="profile-text-container">
+                <div class="profile-text-container">
                     <p id="profile-name">Johnatan Fallen</p>
                     <p id="profile-position">Web Developer</p>
                 </div>
             </div>
+            <p id="navbar-time"></p>
         </nav>
         <section class="header-buttons">
             <button id="delete-all-todos-button" class="btn btn-delete-all">Delete all tasks</button>

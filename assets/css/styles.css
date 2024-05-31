@@ -1,0 +1,23 @@
+html {
+    font-family: "Lato", sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 1);
+}
+
+#navbar-time {
+    font-size: 0.8rem;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+}
