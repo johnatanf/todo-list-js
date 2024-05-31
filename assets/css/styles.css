@@ -245,6 +245,7 @@ body {
 
     .todo-label-priority {
         font-size: 1rem;
+        max-width: 150px;
     }
 
     #create-todo-button {
