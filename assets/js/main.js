@@ -3,9 +3,11 @@ const defaultTaskField = "";
 const defaultPriority = "3";
 const deleteAllTodosButton = document.getElementById('delete-all-todos-button');
 const createTodoButton = document.getElementById('create-todo-button');
+const navbarTime = document.getElementById('navbar-time');
 
 deleteAllTodosButton.addEventListener('click', clickDeleteAllTodosButton)
 createTodoButton.addEventListener('click', clickAddTodoButton)
+navbarTime.innerHTML = formatDate(getTodayDate());
 
 refreshTodoContainerComponents();
 
