@@ -222,7 +222,8 @@ body {
     .body {
         margin: 0 auto;
         max-width: 1000px;
-        border: 2px solid black;
+        border-left: 10px solid rgba(0, 0, 0, 0.8);
+        border-right: 10px solid rgba(0, 0, 0, 0.8);
         width: 80%;
     }
 
