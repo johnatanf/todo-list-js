@@ -48,6 +48,70 @@ html {
     font-size: 0.8rem;
 }
 
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.todo-item--overdue {
+    background: rgba(255, 200, 125, 0.2);
+    font-weight: 700;
+}
+
+.todo-item--done {
+    opacity: 60%;
+}
+
+.todo-item--done .todo-label-task {
+    text-decoration: line-through;
+}
+
+.todo-item--done .todo-label-date {
+    text-decoration: line-through;
+}
+
+.todo-label-task {
+    overflow-wrap: anywhere;
+}
+
+.todo-label-priority {
+    border-radius: 25px;
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 2px 0;
+    max-width: 100px;
+}
+
+.todo-item-information-container {
+    display: flex;
+    flex: 1;
+    gap: 5px;
+    padding: 10px 5px;
+}
+
+.btn-delete-todo {
+    background: rgb(224, 0, 0);
+    color: rgba(255, 255, 255, 1);
+    font-weight: 700;
+    font-size: "Lato", sans-serif;
+    min-width: 60px;
+}
+
+.btn-delete-todo:hover {
+    background: rgba(128, 0, 0, 1);
+}
+
+.todo-checkbox {
+    align-self: flex-start;
+}
+
+.todo-item-details > * {
+    margin-bottom: 10px;
+}
+
 .create-todo {
     display: flex;
     justify-content: space-between;

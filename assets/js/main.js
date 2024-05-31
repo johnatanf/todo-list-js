@@ -104,12 +104,14 @@ function createTodoHTML (item) {
     }
 
     const todoHTML = `
-        <li id="todo-${item['id']}">
-            <input name="done" type="checkbox" id="checkbox-${item['id']}" class="todo-checkbox" ${item['done']? "checked" : ""}>
-            <div>    
-                <p class="todo-label-task">${item['task']}</p>
-                <p class="todo-label-date">${formatDate(item['deadline'])}</p>
-                ${priorityElements[item[['priority']]]}
+        <li class="todo-item" id="todo-${item['id']}">
+            <div class="todo-item-information-container">
+                <input name="done" type="checkbox" id="checkbox-${item['id']}" class="todo-checkbox" ${item['done']? "checked" : ""}>
+                <div class="todo-item-details">    
+                    <p class="todo-label-task">${item['task']}</p>
+                    <p class="todo-label-date">${formatDate(item['deadline'])}</p>
+                    ${priorityElements[item[['priority']]]}
+                </div>
             </div>
             <button id="delete-${item['id']}" class="btn btn-delete-todo">Delete</button>
         </li>
