@@ -23,6 +23,15 @@ html {
     box-shadow: none;
 }
 
+#delete-all-todos-button {
+    background: rgba(220,0,0,1);
+    color:rgba(255, 255, 255, 1);
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 60rem;
+}
+
 .section {
     padding: 10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);;
@@ -169,4 +178,12 @@ html {
 
 #create-todo-button:hover {
     background: rgba(44, 130, 201, 1);
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:rgba(0, 0, 0, 0.8);
+    padding: 20px 40px;
 }
