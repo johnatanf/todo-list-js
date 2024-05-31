@@ -37,6 +37,7 @@ body {
     padding: 5px 10px;
     border-radius: 5px;
     width: 60rem;
+    max-width: 300px;
 }
 
 #delete-all-todos-button:hover {
