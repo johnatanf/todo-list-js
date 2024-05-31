@@ -29,9 +29,11 @@ function clickAddTodoButton() {
     const createTodoField = document.getElementById('create-todo-field');
     const createTodoPriority = document.getElementById('create-todo-priority');
 
-    addTodoItemToStorage(createTodoField.value, parseInt(createTodoPriority.value))
-    createTodoField.value = defaultTaskField;
-    createTodoPriority.value = defaultPriority;
+    if(createTodoField.value !== "") {
+        addTodoItemToStorage(createTodoField.value, parseInt(createTodoPriority.value))
+        createTodoField.value = defaultTaskField;
+        createTodoPriority.value = defaultPriority;
+    }
 }
 
 function createUniqueID () {
