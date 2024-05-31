@@ -48,6 +48,16 @@ body {
     padding: 10px;
 }
 
+.section-heading {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.todo-label-empty {
+    font-size: 0.8rem;
+}
+
 .create-todo {
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
@@ -239,5 +249,13 @@ body {
     #create-todo-button {
         width: 50px;
         height: 50px;
+    }
+
+    .section-heading {
+        font-size: 1.5rem;
+    }
+
+    .todo-label-empty {
+        font-size: 1rem;
     }
 }
