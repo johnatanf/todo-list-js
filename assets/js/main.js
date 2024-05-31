@@ -95,7 +95,7 @@ function clearTodoSection (htmlSectionElement) {
     htmlSectionElement.innerHTML = "";
 }
 
-function createTodoHTML (item) {
+function createTodoHTML (item, cssClass) { 
 
     const priorityElements = {
         1: `<p class="todo-label-priority priority--high">high priority</p>`,
@@ -104,7 +104,7 @@ function createTodoHTML (item) {
     }
 
     const todoHTML = `
-        <li class="todo-item" id="todo-${item['id']}">
+        <li class="todo-item ${cssClass !== "" ? cssClass : ""}" id="todo-${item['id']}">
             <div class="todo-item-information-container">
                 <input name="done" type="checkbox" id="checkbox-${item['id']}" class="todo-checkbox" ${item['done']? "checked" : ""}>
                 <div class="todo-item-details">    
@@ -139,20 +139,29 @@ function addEventListeners() {
 
 function refreshTodoSection (htmlSectionElement, data) {
     let appendHTML = '';
-    const todoContainersMessages = {
-        "todo-overdue-container": "No overdue tasks",
-        "todo-today-container": "No tasks due today. Please create a todo above",
-        "todo-done-container": "No completed tasks yet"
+    const todoContainers = {
+        "todo-overdue-container": {
+            message: "No overdue tasks",
+            class: "todo-item--overdue"
+        },
+        "todo-today-container": {
+            message: "No tasks due today. Please create a todo above",
+            class: ""
+        },
+        "todo-done-container": { 
+            message: "No completed tasks yet",
+            class: "todo-item--done"
+        }
     }
 
     clearTodoSection(htmlSectionElement);
 
     data.forEach((item, index) => {
-        appendHTML = appendHTML.concat(createTodoHTML(item))
+        appendHTML = appendHTML.concat(createTodoHTML(item, todoContainers[htmlSectionElement.id]['class']))
     })
 
     if (appendHTML === '' ) { // if no data, then give message
-        appendHTML = `<li class="todo-label-empty">${todoContainersMessages[htmlSectionElement.id]}</li>`
+        appendHTML = `<li class="todo-label-empty">${todoContainers[htmlSectionElement.id]['message']}</li>`
     }
 
     htmlSectionElement.innerHTML = appendHTML;
