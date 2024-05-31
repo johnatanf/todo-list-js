@@ -24,25 +24,29 @@
         </nav>
     </header>
     <main>
-        <section class="create-todo">
-            <textarea id="create-todo-field" name="todo"></textarea>
-            <select id="create-todo-priority" name="priority">
-                <option value="1">high priority</option>
-                <option value="2">medium priority</option>
-                <option value="3" selected>low priority</option>
-            </select>
-            <button id="create-todo-button">+</button>
+        <section class="section create-todo">
+            <div class="create-todo-field-container">  
+                <textarea id="create-todo-field" name="todo"></textarea>
+                <select id="create-todo-priority" name="priority">
+                    <option class="create-todo-option priority--high" value="1">high priority</option>
+                    <option class="create-todo-option priority--medium" value="2">medium priority</option>
+                    <option class="create-todo-option priority--low" value="3" selected>low priority</option>
+                </select>
+            </div>
+            <div class="create-todo-button-container">
+                <button class="btn" id="create-todo-button">+</button>
+            </div>
         </section>
-        <section class="list-of-todos">
-            <section id="todo-overdue">
+        <section class="section list-of-todos">
+            <section class="section" id="todo-overdue">
                 <p>Overdue</p>
                 <ul id="todo-overdue-container"></ul>
             </section>
-            <section id="todo-today">
+            <section class="section" id="todo-today">
                 <p>Today</p>
                 <ul id="todo-today-container"></ul>
             </section>
-            <section id="todo-done">
+            <section class="section" id="todo-done">
                 <p>Done</p>
                 <ul id="todo-done-container"></ul>
             </section>
